@@ -19,7 +19,7 @@ class Task extends CI_Controller {
 		$taskCount = count ( $taskObj->task );
 		
 		$responseObj = '{"messages":[
-				"{text" : "Total Count' . $taskCount . '"]}}';
+				{"text" : "Total Count' . $taskCount . '"}]}';
 		
 		echo  ( $responseObj );
 		
