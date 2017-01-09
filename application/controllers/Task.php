@@ -28,7 +28,7 @@ class Task extends CI_Controller {
 			$content = $content . '
             {
               "title":"' . $task->title . '",
-              "subtitle":"' . $task->summary . '"
+              "subtitle":"' . "000" . '"
             }';
 			$i ++;
 		}
