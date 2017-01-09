@@ -24,7 +24,7 @@ class Task extends CI_Controller {
 		$content = '
             {
               "title":"' . $taskObj->task [0]->title . '",
-              "subtitle":"First task",
+              "subtitle":"First task"
             }';
 		
 		$responseObj = '{
