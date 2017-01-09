@@ -17,7 +17,23 @@ class Task extends CI_Controller {
 		curl_close ( $curl );
 		$taskObj = json_decode ( $resp );
 		$taskCount = count ( $taskObj->task );
-		echo $taskCount;
+		
+		$responseObj = array (
+				'messages' => array (
+						'text' => 'Total count: ' . $taskCount 
+				) 
+		);
+		
+		echo json_encode ( $responseObj );
+		
+		/*
+		 * {
+		 * "messages": [
+		 * {"text": "Welcome to our store!"},
+		 * {"text": "How can I help you?"}
+		 * ]
+		 * }
+		 */
 		// print_r ( $taskObj );
 	}
 }
