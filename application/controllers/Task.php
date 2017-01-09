@@ -18,13 +18,19 @@ class Task extends CI_Controller {
 		$taskObj = json_decode ( $resp );
 		$taskCount = count ( $taskObj->task );
 		
-		$responseObj = array (
-				'messages' => array (
-						'text' => 'Total count: ' . $taskCount 
-				) 
-		);
+		$responseObj = '{"messages":[
+				"text" : "Total Count' . $taskCount . '"]}';
 		
-		echo json_encode ( $responseObj );
+		echo  ( $responseObj );
+		
+		$jsonData = '{
+			“recipient”:{
+				“id”:”’.$sender.’”
+			},
+			“message”:{
+				“text”:”’.$message_to_reply.’”
+			}
+		}';
 		
 		/*
 		 * {
