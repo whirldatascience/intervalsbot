@@ -20,12 +20,18 @@ class Task extends CI_Controller {
 		
 		$responseObj = '{"messages":[
 				{"text" : "Total Count' . $taskCount . '"}]}';
-		
-		$content = '
+		$content = "";
+		$i = 0;
+		foreach ( $taskObj->task as $task ) {
+			if ($i > 0)
+				$content = $content . ',';
+			$content = $content . '
             {
-              "title":"' . $taskObj->task [0]->title . '",
-              "subtitle":"First task"
+              "title":"' . $task->title . '",
+              "subtitle":"' . $task->summary . '"
             }';
+			$i ++;
+		}
 		
 		$responseObj = '{
  "messages": [
