@@ -17,7 +17,7 @@ class Task extends CI_Controller {
 		curl_close ( $curl );
 		$taskObj = json_decode ( $resp );
 		$taskCount = count ( $taskObj->task );
-		
+		echo $taskCount;
 		// print_r ( $taskObj );
 	}
 }
