@@ -21,14 +21,7 @@ class Task extends CI_Controller {
 		$responseObj = '{"messages":[
 				{"text" : "Total Count' . $taskCount . '"}]}';
 		
-		$responseObj = '{
- "messages": [
-    {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
+		$content = '
             {
               "title":"Classic White T-Shirt",
               "image_url":"http://petersapparel.parseapp.com/img/item100-thumb.png",
@@ -62,8 +55,17 @@ class Task extends CI_Controller {
                   "title":"Buy Item"
                 }
               ]
-            }
-          ]
+            },
+          ';
+		
+		$responseObj = '{
+ "messages": [
+    {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[' . $content . ']
         }
       }
     }
@@ -71,7 +73,5 @@ class Task extends CI_Controller {
 }';
 		
 		echo ($responseObj);
-		
-		
 	}
 }
