@@ -1,8 +1,8 @@
 <?php
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 class Task extends CI_Controller {
-	public function getTasks($userKey, $password) {
-		$uri = INTERVALS_API . '/task/';
+	public function getTasks($userKey, $password,$limit) {
+		$uri = INTERVALS_API . '/task/?limit='.$limit;
 		$curl = curl_init ();
 		curl_setopt_array ( $curl, array (
 				CURLOPT_RETURNTRANSFER => 1,
