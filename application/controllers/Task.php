@@ -23,12 +23,15 @@ class Task extends CI_Controller {
 		$content = "";
 		$i = 0;
 		foreach ( $taskObj->task as $task ) {
+			$summary = "-";
+			if (isset ( $task->summary ) && $task->summary != null && $task->summary != "")
+				$summary = $task->summary;
 			if ($i > 0)
 				$content = $content . ',';
 			$content = $content . '
             {
               "title":"' . $task->title . '",
-              "subtitle":"' . "000" . '"
+              "subtitle":"' . $summary . '"
             }';
 			$i ++;
 		}
